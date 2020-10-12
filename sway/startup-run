@@ -1,0 +1,6 @@
+i3-msg workspace Infoboard
+urxvt -fn 'xft:SourceCodePro:style=Regular:size=7' -e sh -c 'i3-msg border none; i3-msg split v; ncmpcpp' &
+sleep 0.4
+urxvt -fn 'xft:SourceCodePro:style=Regular:size=10' -e sh -c 'i3-msg border none; htop;' &
+sleep 0.4
+i3-msg workspace 1

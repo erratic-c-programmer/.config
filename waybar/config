@@ -1,0 +1,42 @@
+{
+	"layer": "top",
+		"position": "top",
+		"height": 30,
+		"modules-left": ["sway/workspaces", "sway/mode"],
+		"modules-center": ["mpd"],
+		"modules-right": ["pulseaudio", "cpu", "memory", "battery", "tray", "clock"],
+
+		"mpd": {
+			"format": "{artist} - {title}",
+			"interval": 2,
+		},
+
+		"pulseaudio": {
+			"format": "🔊 {volume}%",
+			"on-click": "pavucontrol-qt"
+		},
+
+		"cpu": {
+			"format": "CPU usage: {usage}%",
+			"interval": 2
+		},
+
+		"memory": {
+			"format": "Memory: {used:.1f}GB ({percentage}%)",
+			"interval": 5
+		},
+
+		"battery": {
+			"format": "{icon} {capacity}%",
+			"format-icons": ["", "", "", "", ""],
+			"interval": 60
+		},
+
+		"clock": {
+			"format-alt": "{:%a, %d. %b  %H:%M}"
+		},
+
+		"tray": {
+			"spacing": 10
+		}
+}

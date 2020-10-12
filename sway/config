@@ -1,0 +1,267 @@
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "Mail"
+set $ws9 "Whatsapp"
+set $ws10 "Music"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "Infoboard"
+
+###########################################
+# MONITOR/KEYBOARD SETTINGS
+###########################################
+
+# output HDMI-A-2 scale 1.1
+output HDMI-A-2 mode 1920x1080@71.910004Hz pos 0 0
+output eDP-1 position 1920 280
+
+input "type:keyboard" {
+	xkb_layout us,de
+	xkb_options ctrl:nocaps,compose:ralt
+}
+
+# Bind workspaces
+workspace $ws1 output HDMI-A-2
+workspace $ws2 output HDMI-A-2
+workspace $ws3 output HDMI-A-2
+workspace $ws4 output HDMI-A-2
+workspace $ws5 output HDMI-A-2
+workspace $ws6 output HDMI-A-2
+workspace $ws7 output HDMI-A-2
+workspace $ws8 output HDMI-A-2
+workspace $ws9 output HDMI-A-2
+workspace $ws10 output HDMI-A-2
+workspace $ws11 output eDP-1
+workspace $ws12 output eDP-1
+workspace $ws13 output eDP-1
+workspace $ws14 output eDP-1
+workspace $ws15 output eDP-1
+workspace $ws16 output eDP-1
+workspace $ws17 output eDP-1
+workspace $ws18 output eDP-1
+workspace $ws19 output eDP-1
+workspace $ws20 output eDP-1
+###########################################
+
+
+
+
+set $mod Mod4
+font pango:DejaVu Sans Mono 8
+
+# Volume control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# mpd control
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+# Brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+# Utilities
+bindsym XF86Mail exec thunderbird
+bindsym XF86Calculator exec speedcrunch
+bindsym XF86HomePage exec alacritty -e ranger
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec alacritty
+
+# kill focused window
+bindsym $mod+shift+q kill
+
+#bindsym $mod+d exec ~/utils/force-float alacritty -d 55 18 -t program-launcher -e sway-launcher-desktop; rm ~/.cache/sway-launcher-desktop-history.txt
+bindsym $mod+d exec nwggrid
+
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# resize tiled windows
+bindsym $mod+Ctrl+h resize grow left 20
+bindsym $mod+Ctrl+j resize grow down 20
+bindsym $mod+Ctrl+k resize grow up 20
+bindsym $mod+Ctrl+l resize grow right 20
+bindsym $mod+Shift+Ctrl+h resize shrink left 20
+bindsym $mod+Shift+Ctrl+j resize shrink down 20
+bindsym $mod+Shift+Ctrl+k resize shrink up 20
+bindsym $mod+Shift+Ctrl+l resize shrink right 20
+
+# split in horizontal orientation
+bindsym $mod+backslash split h
+
+# split in vertical orientation
+bindsym $mod+minus split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+m fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+F1 layout stacking
+bindsym $mod+F2 layout tabbed
+bindsym $mod+F3 layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+s floating toggle
+# switch focus between floating and tiled
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+Control+1 workspace $ws11
+bindsym $mod+Control+2 workspace $ws12
+bindsym $mod+Control+3 workspace $ws13
+bindsym $mod+Control+4 workspace $ws14
+bindsym $mod+Control+5 workspace $ws15
+bindsym $mod+Control+6 workspace $ws16
+bindsym $mod+Control+7 workspace $ws17
+bindsym $mod+Control+8 workspace $ws18
+bindsym $mod+Control+9 workspace $ws19
+bindsym $mod+Control+0 workspace $ws20
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Control+Shift+1 move container to workspace $ws11
+bindsym $mod+Control+Shift+2 move container to workspace $ws12
+bindsym $mod+Control+Shift+3 move container to workspace $ws13
+bindsym $mod+Control+Shift+4 move container to workspace $ws14
+bindsym $mod+Control+Shift+5 move container to workspace $ws15
+bindsym $mod+Control+Shift+6 move container to workspace $ws16
+bindsym $mod+Control+Shift+7 move container to workspace $ws17
+bindsym $mod+Control+Shift+8 move container to workspace $ws18
+bindsym $mod+Control+Shift+9 move container to workspace $ws19
+bindsym $mod+Control+Shift+0 move container to workspace $ws20
+
+bindsym $mod+Shift+r reload
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'Exit Sway?' -B 'Yes' 'swaymsg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Cycle through active workspaces
+bindsym $mod+bracketright workspace next
+bindsym $mod+bracketleft workspace prev
+
+# bar {
+	# position top
+	# font pango:Inconsolata 11
+	# status_command i3status
+# }
+
+for_window [app_id="^.*"] border pixel
+for_window [app_id="speedcrunch"] floating enable
+for_window [app_id="pavucontrol-qt"] floating enable
+for_window [app_id="Alacritty"] opacity 0.9
+for_window [app_id="speedcrunch"] opacity 0.8
+for_window [title="Firefox - Sharing Indicator"] floating enable
+
+
+assign [app_id="thunderbird"] $ws8
+assign [title="WALC"] $ws9
+
+gaps inner 10
+
+# Colours
+# CLASS BORDER BACKGROUND TEXT INDICATOR CHILD_BORDER
+client.focused #058383 #058383 #FFFFFF #00B9B9 #058383
+
+
+
+# Autostart
+exec waybar
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec swaybg -i Pictures/wallpapers/robinwall02-notext-edited.png -m fill
+exec maestral gui
+exec safeeyes
+exec swayidle timeout 600 ~/utils/lockscreen &
+exec mako
+exec fcitx
+
+# Import GTK settings
+exec_always import-gsettings \
+			gtk-theme:gtk-theme-name \
+			icon-theme:gtk-icon-theme-name \
+			cursor-theme:gtk-cursor-theme-name
+
+
+# Some wierd hack to stop gtk stuff from hanging
+exec_always dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY

@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/isaac/.config/.git'
+let g:netrw_dirhist_4='/home/isaac/devel/projects/libmds-ng/.git'
+let g:netrw_dirhist_3='/home/isaac/.emacs.d'
+let g:netrw_dirhist_2='/home/isaac'
+let g:netrw_dirhist_1='/home'
+let g:netrw_dirhist_0='/home/isaac'
+let g:netrw_dirhist_9='/home/isaac/devel/projects/libmds-ng/.git'
+let g:netrw_dirhist_8='/home/isaac/devel/projects/libmds-ng/docs'
+let g:netrw_dirhist_7='/home/isaac/devel/projects/libmds-ng/vector'
+let g:netrw_dirhist_6='/home/isaac/devel/projects/libmds-ng/.git'

@@ -1,0 +1,11 @@
+/*
+!.gitignore
+!nvim/
+!ncmpcpp/
+!mpd/
+!sway/
+!waybar/
+!alacritty/
+
+nvim/spell/
+mpd/state

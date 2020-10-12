@@ -1,0 +1,25 @@
+nnoremap <left> <C-w>h
+nnoremap <down> <C-w>j
+nnoremap <up> <C-w>k
+nnoremap <right> <C-w>l
+nnoremap <S-left> :vsplit<CR><C-w>h
+nnoremap <S-down> :split<CR>
+nnoremap <S-up> :split<CR><C-w>k
+nnoremap <S-right> :vsplit<CR>
+nnoremap <C-left> <C-w>H
+nnoremap <C-down> <C-w>J
+nnoremap <C-up> <C-w>K
+nnoremap <C-right> <C-w>L
+
+inoremap <left> <C-o><C-w>h
+inoremap <down> <C-o><C-w>j
+inoremap <up> <C-o><C-w>k
+inoremap <right> <C-o><C-w>l
+inoremap <S-left> <C-o>:vsplit<CR><C-w>h
+inoremap <S-down> <C-o>:split<CR>
+inoremap <S-up> <C-o>:split<CR><C-w>k
+inoremap <S-right> <C-o>:vsplit<CR>
+inoremap <C-left> <C-o><C-w>H
+inoremap <C-down> <C-o><C-w>J
+inoremap <C-up> <C-o><C-w>K
+inoremap <C-right> <C-o><C-w>L
