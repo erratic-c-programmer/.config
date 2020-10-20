@@ -264,4 +264,4 @@ exec_always import-gsettings \
 
 
 # Some wierd hack to stop gtk stuff from hanging
-exec_always dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+#exec_always dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
