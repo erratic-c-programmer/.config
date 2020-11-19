@@ -1,13 +1,17 @@
 runtime functions.vim
 
 autocmd BufEnter *.h setlocal filetype=c
-" autocmd BufWritePre *.py call OwnFmt('black', '--quiet -')
-" autocmd BufWritePre *.c call OwnFmt('indent', '-ts4 -ut -kr')
-" autocmd BufWritePre *.h call OwnFmt('indent', '-ts4 -ut -kr -par 2>/dev/null')
-" autocmd BufWritePre *.vim call OwnFmt('cat', '')
 
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Update signature help on jump placeholder.
-autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+autocmd FileType bibtex set tabstop=2 softtabstop=0 smarttab shiftwidth=2 expandtab
+autocmd FileType go set tabstop=2 softtabstop=0 smarttab shiftwidth=2 expandtab
+autocmd FileType haskell set expandtab smarttab tabstop=2 softtabstop=0 shiftwidth=2
+autocmd FileType html inoremap <// </<C-x><C-o><Esc>==`.a
+autocmd FileType html set tabstop=2 softtabstop=0 smarttab shiftwidth=2 expandtab
+autocmd FileType lilypond set tabstop=2 shiftwidth=2 softtabstop=0 expandtab foldmethod=manual
+autocmd FileType lisp set tabstop=2 softtabstop=0 smarttab shiftwidth=2 expandtab
+autocmd FileType notes set spell shiftwidth=2 tabstop=2 | ab o •
+autocmd FileType python compiler pylint | let g:own_builtin_indent=0 | set noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+autocmd FileType sh set tabstop=2 softtabstop=0 smarttab shiftwidth=2 expandtab
+autocmd FileType tex set tabstop=2 softtabstop=0 smarttab shiftwidth=2 expandtab spell makeprg=make
+autocmd FileType text set spell expandtab
+autocmd FileType vim set tabstop=2 shiftwidth=2 softtabstop=2

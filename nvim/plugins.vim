@@ -1,10 +1,13 @@
 call plug#begin('~/.local/share/nvim/plugged')
+
 Plug 'KangOl/vim-pudb'
+Plug 'airblade/vim-gitgutter'
+Plug 'ervandew/supertab'
 Plug 'junegunn/goyo.vim'
 Plug 'lervag/vimtex'
 Plug 'lpinilla/vim-codepainter'
 Plug 'mbbill/undotree'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'tpope/vim-abolish'

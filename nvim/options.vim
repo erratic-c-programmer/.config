@@ -1,5 +1,6 @@
 runtime functions.vim
 
+filetype plugin off
 set backspace=indent,eol,start
 set bg=dark
 set cinoptions=:0
@@ -10,9 +11,10 @@ set grepprg=grep\ -nH\ $*
 set hidden
 set incsearch
 set mouse=a
+set noshowmode
 set nrformats=bin,hex
 set number
-set noshowmode
+set omnifunc=v:lua.vim.lsp.omnifunc
 set relativenumber
 set ruler
 set scrolloff=1
@@ -75,12 +77,5 @@ let g:sonokai_style = 'maia'
 let g:sonokai_enable_italic = 1
 colorscheme sonokai
 
-" For treesitter
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",     -- one of "all", "language", or a list of languages
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-  },
-}
-EOF
+" Highlight trailing whitespace
+match ErrorMsg '\s\+$'
